@@ -1,7 +1,7 @@
-const mongoos=requare("mongoos") 
+const mongoose=require("mongoose") 
 async function connectToDb (url) { 
-await mongoos.connect (url, {
+await mongoose.connect (url, {
 dbname:"lenom"
 }
 )}
-modele.export= connectToDb
+module.exports= connectToDb
