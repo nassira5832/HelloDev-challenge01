@@ -13,8 +13,6 @@ app.use("/api", routes);
 app.use(handleNotFound);
 app.use(handleInternalServerError);
 
-
-console.log("DATABASE_URL from env:", process.env.DATABASE_URL);
 const dbUrl = process.env.DATABASE_URL;
 const port= 5000;
 async function start(){

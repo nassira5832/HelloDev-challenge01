@@ -5,12 +5,16 @@ const character = require ("../database/models/False-knight-game-character");
 
 // adding 
 router.post("/Falseknight",async(req,res)=>{
-      const {name , level }=req.body;
+      const{name , level}= req.body
+      console.log("name",name)
+      console.log("level",level)
+
+
       if (!name || !level) {
             res.json("Name and level are required ")
       }
       try {
-            const newCharacter= new character ({
+            const newCharacter= new  character ({
                   name: name,
                   level: level
             })
