@@ -4,8 +4,8 @@ const {handleNotFound, handleInternalServerError, validateRequestBody}= require(
 const routes= require("./routes/FalseKnight")
 const app=express();
 const  connecttodb = require("./database/main")
-const env= require("dotenv")
-env.config();
+const dotenv = require('dotenv');
+dotenv.config();
 // challenge01
 app.use(express.json());
 app.use(validateRequestBody);
@@ -13,10 +13,13 @@ app.use("/api", routes);
 app.use(handleNotFound);
 app.use(handleInternalServerError);
 
+
+console.log("DATABASE_URL from env:", process.env.DATABASE_URL);
+const dbUrl = process.env.DATABASE_URL;
 const port= 5000;
 async function start(){
     try{
-    await connecttodb(process.env.DatebaseUrl)
+    await connecttodb(dbUrl)
     app.listen(port, ()=>{console.log("my server started ")})
     }catch(error){
       console.log("erreur ", error)
