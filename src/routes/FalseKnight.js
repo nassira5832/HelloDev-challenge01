@@ -1,7 +1,7 @@
 const express=require("express")
 const mongoose=require("mongoose")
 const router= express.Router();
-const character = require ("../models/False-knight-game-character");
+const character = require ("../database/models/False-knight-game-character");
 
 // adding 
 router.post("/Falseknight",async(req,res)=>{
